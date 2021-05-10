@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: b46a28131103ca24daee425ae24c28c6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Adelaide
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 60a80d135829d0e419ec54fc6262c063, type: 3}
+  - {fileID: 12800000, guid: 29fbf8eca099491488e4e86b4bfa9694, type: 3}
+  - {fileID: 12800000, guid: d800ea0e4cea2174aad33488ff4ecd79, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
