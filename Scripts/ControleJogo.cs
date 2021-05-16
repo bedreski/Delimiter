@@ -70,7 +70,7 @@ public class ControleJogo : MonoBehaviour {
 
 
 
-    /*public void EmpilhaDelimitador() {
+    public void EmpilhaDelimitador() {
 
         Debug.Log("Caractere sendo empilhado: " + abertura); 
         pilha.Push(abertura); 
@@ -92,10 +92,8 @@ public class ControleJogo : MonoBehaviour {
     //Revisar e desenvolver 
     public void DesempilhaCaixa() {
 
-        //c = pilhaCaixas.Pop();
-        //Destroy(c); 
         Debug.Log("Método DesempilhaCaixa sem funções");
-    }*/
+    }
 
 
     void ImprimePilha() {
