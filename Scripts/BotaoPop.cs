@@ -15,8 +15,8 @@ public class BotaoPop : MonoBehaviour {
 
     public void Retirar() {
 
-        cj.DesempilhaD(); 
-        cj.DesempilhaCaixa(); 
+        cj.DesempilhaDelimitador(); 
+        //cj.DesempilhaCaixa(); 
         cj.VerificaExpressao();
     }
 

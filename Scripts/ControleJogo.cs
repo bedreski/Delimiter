@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-//Revisando 
+//Revisado 
 
 public class ControleJogo : MonoBehaviour {
 
@@ -21,25 +21,21 @@ public class ControleJogo : MonoBehaviour {
     void Start() {
 
         InstanciaScript();
-        e = GameObject.Find("exp2").GetComponent<Expressao>();
+        e = GameObject.Find("expressao").GetComponent<Expressao>();
     }
 
 
+    //Revisado -- adicionar os outros tratamentos
     public void VerificaExpressao() { 
 
-        if(e.GetEncFechamento() && pilha.Count == 0) {
-
-            Debug.Log("Expressão incorreta!");
-
-        } else {
-
-            ComparaDelimitadores(abertura, fechamento);
-        }
-
+        ComparaDelimitadores(abertura, fechamento);
+    
     }
 
 
     public void ComparaDelimitadores(string a, string f) {
+
+        Debug.Log("Comparando abertura: " + a + " com fechamento: " + f);
 
         if(a == "[" && f == "]")  {
 
@@ -65,17 +61,24 @@ public class ControleJogo : MonoBehaviour {
         }
     }
 
+    //Delimitador e GameObject 
+    public void Empilha() {
+        
+        Debug.Log("Caractere sendo empilhado: " + abertura); 
+        pilha.Push(abertura);
+    }
 
 
-    public void EmpilhaDelimitador() {
 
-        Debug.Log("Caractere que está sendo empilhado: " + abertura); 
+    /*public void EmpilhaDelimitador() {
+
+        Debug.Log("Caractere sendo empilhado: " + abertura); 
         pilha.Push(abertura); 
     }
 
 
-    
-    public void DesempilhaD() {
+    //Revisar 
+    public void DesempilhaDelimitador() {
 
         abertura = pilha.Pop();
         Debug.Log("Caractere sendo desempilhado: " + abertura);
@@ -86,23 +89,32 @@ public class ControleJogo : MonoBehaviour {
         pilhaCaixas.Push(caixa); 
     }
 
+    //Revisar e desenvolver 
     public void DesempilhaCaixa() {
 
         //c = pilhaCaixas.Pop();
         //Destroy(c); 
-        Debug.Log("Método sem funções");
-    }
+        Debug.Log("Método DesempilhaCaixa sem funções");
+    }*/
 
 
     void ImprimePilha() {
 
-        Debug.Log("Pilha:");
+        Debug.Log("Pilha de caracteres:");
 
         foreach(string caractere in pilha) {
 
             Debug.Log(caractere);
+        }
+
+        Debug.Log("Pilha de caixas:");
+
+        foreach(Caixa caixas in pilhaCaixas) {
+
+            Debug.Log(caixas);
         } 
     }
+    
 
 
     void NovaCaixa() {

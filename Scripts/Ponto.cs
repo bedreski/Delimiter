@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-//Revisando 
+//Revisado
 
 public class Ponto : MonoBehaviour {
 
@@ -27,9 +27,11 @@ public class Ponto : MonoBehaviour {
 
         InstanciaPonto();
 
-        e = GameObject.Find("exp2").GetComponent<Expressao>();
+        e = GameObject.Find("expressao").GetComponent<Expressao>();
         ConverteExpressao();
         expressao = e.expressao;
+        Debug.Log("Expressao no Ponto: " + expressao);
+
 
         cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
 
@@ -92,5 +94,14 @@ public class Ponto : MonoBehaviour {
         }
     }
 
+
+/*Função para colocar um valor do transform position para cada expressão em específico. 
+    
+    --> Switch case ou if
+    --> Procurar uma forma de identificar a expressão (tag, nome, componente...)
+    --> Colocar um valor para o ponto.transform.position receber 
+    --> Essa função será chamada no lugar da linha 53 (ponto.transform.position)
+
+    */
 
 }

@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 using System; 
 
-//Revisando
+//Revisado
 
 public class Expressao : MonoBehaviour {
 
@@ -92,7 +92,6 @@ public class Expressao : MonoBehaviour {
     }
 
     
-    //Adicionar getters e setter de acordo com C#
     public bool GetEncFechamento() {
 
         return encontrouFechamento; 
