@@ -39,6 +39,7 @@ public class ControleJogo : MonoBehaviour {
 
         if(a == "[" && f == "]")  {
 
+            //Recurso de interface aqui 
             Debug.Log("Colchetes: ok!");
 
         } else {
@@ -66,14 +67,8 @@ public class ControleJogo : MonoBehaviour {
         
         Debug.Log("Caractere sendo empilhado: " + abertura); 
         pilha.Push(abertura);
-    }
-
-
-
-    public void EmpilhaDelimitador() {
-
-        Debug.Log("Caractere sendo empilhado: " + abertura); 
-        pilha.Push(abertura); 
+        //Qual caixa? 
+        pilhaCaixas.Push(caixa);
     }
 
 
@@ -82,11 +77,6 @@ public class ControleJogo : MonoBehaviour {
 
         abertura = pilha.Pop();
         Debug.Log("Caractere sendo desempilhado: " + abertura);
-    }
-
-    public void EmpilhaCaixa() {
-
-        pilhaCaixas.Push(caixa); 
     }
 
     //Revisar e desenvolver 
@@ -104,23 +94,16 @@ public class ControleJogo : MonoBehaviour {
 
             Debug.Log(caractere);
         }
-
-        Debug.Log("Pilha de caixas:");
-
-        foreach(Caixa caixas in pilhaCaixas) {
-
-            Debug.Log(caixas);
-        } 
     }
     
 
-
+    //vem do script gerador (origem da caixa)
     void NovaCaixa() {
 
         gerador.GerandoCaixa(); 
     }
 
-
+    //É chamado no script ponto
     public void GerarCaixa() {
 
         Invoke("NovaCaixa", 0.7f); 

@@ -16,6 +16,8 @@ public class Ponto : MonoBehaviour {
     private int i; 
     public Text texto;
     public string expressao;
+    private string tagExpressao; 
+    private float maxDistanciaDelta; 
 
 
     void Awake() {
@@ -30,18 +32,45 @@ public class Ponto : MonoBehaviour {
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         ConverteExpressao();
         expressao = e.expressao;
-        Debug.Log("Expressao no Ponto: " + expressao);
-
 
         cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
 
         i = 0; 
+
+        Debug.Log("Tag da expressão: " + e.tag);
+        IdentificaExpresssao();
+    }
+
+
+    void IdentificaExpresssao() {
+
+        tagExpressao = e.tag; 
+
+        switch(tagExpressao) {
+
+            case "expressao1":
+                maxDistanciaDelta = 0.65f; 
+            break; 
+
+            case "expressao2":
+                maxDistanciaDelta = 1.115f;
+            break; 
+
+            case "expressao3": 
+                maxDistanciaDelta = 0.59f;
+            break; 
+
+            case "expressao4": 
+                maxDistanciaDelta = 0.65f;
+            break; 
+
+        }
     }
 
    
     public void MovePonto() {
 
-        ponto.transform.position = Vector3.MoveTowards(ponto.transform.position, fimExp.transform.position, 1.112f);
+        ponto.transform.position = Vector3.MoveTowards(ponto.transform.position, fimExp.transform.position, maxDistanciaDelta);
 
         Debug.Log("v[" + i + "]  = " + expressao[i]); 
 
@@ -52,7 +81,7 @@ public class Ponto : MonoBehaviour {
 
             cj.abertura = e.GetDelimAbertura(); 
             cj.GerarCaixa();
-    
+        
         } else {
 
             if(e.GetEncFechamento()) {
@@ -62,11 +91,10 @@ public class Ponto : MonoBehaviour {
             }
         }
         
-
         if(i % 2 == 0)
             i += 2; 
         else
-            i += 0; 
+            i += 0;
     }
 
 
@@ -93,15 +121,5 @@ public class Ponto : MonoBehaviour {
             instancia = this;
         }
     }
-
-
-/*Função para colocar um valor do transform position para cada expressão em específico. 
-    
-    --> Switch case ou if
-    --> Procurar uma forma de identificar a expressão (tag, nome, componente...)
-    --> Colocar um valor para o ponto.transform.position receber 
-    --> Essa função será chamada no lugar da linha 53 (ponto.transform.position)
-
-    */
 
 }

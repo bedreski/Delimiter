@@ -17,8 +17,7 @@ public class BotaoPush : MonoBehaviour {
 
         Caixa.SoltarCaixa(); 
         Caixa.PousoDaCaixa(); 
-        cj.EmpilhaDelimitador();
-        cj.EmpilhaCaixa(); 
+        cj.Empilha();
     }
 
 }
