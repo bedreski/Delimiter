@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2533341212768957206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.39, y: 3.7, z: 0}
+  m_LocalPosition: {x: 4.4, y: 3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,4 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402bfef971163254e877da4c064507af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parenteses: {fileID: 0}
+  chaves: {fileID: 0}
+  colchetes: {fileID: 0}
   caixa: {fileID: 1617744823836445873, guid: 0705f5d330f0c424992947a6a99edd27, type: 3}
+  escolhaCaixa: 0
