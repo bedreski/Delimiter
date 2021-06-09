@@ -4,28 +4,31 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using System; 
+using TMPro; 
 
 //Revisado
 
 public class Expressao : MonoBehaviour {
 
+    public static Expressao i;
     public string expressao; 
     private string abertura; 
     private string fechamento; 
     private bool encontrouAbertura; 
     private bool encontrouFechamento; 
-    public static Expressao i; 
+    private int tamanhoExpressao; 
 
     void Start() {
 
-        InstanciaExp();  
+        InstanciaExp(); 
+        tamanhoExpressao = expressao.Length;  
     }
 
     void Update() {
 
     }
 
-    public void ExpressaoString(Text e) {
+    public void ExpressaoString(TMP_Text e) {
 
         expressao = e.text;
         
@@ -110,6 +113,11 @@ public class Expressao : MonoBehaviour {
     public string GetDelimFechamento() {
 
         return fechamento; 
+    }
+
+    public int GetTamanhoExpressao() {
+
+        return tamanhoExpressao; 
     }
 
 

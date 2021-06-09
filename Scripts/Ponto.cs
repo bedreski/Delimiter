@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System; 
+using TMPro; 
 
 //Revisado
 
@@ -13,11 +15,13 @@ public class Ponto : MonoBehaviour {
     public static Ponto instancia; 
     ControleJogo cj; 
     private Expressao e; 
-    private int i; 
-    public Text texto;
+    public int i; 
+    //public Text texto;
+    public TMP_Text texto; 
     public string expressao;
     private string tagExpressao; 
     private float maxDistanciaDelta; 
+    Mensagem m; 
 
 
     void Awake() {
@@ -39,9 +43,11 @@ public class Ponto : MonoBehaviour {
 
         Debug.Log("Tag da expressão: " + e.tag);
         IdentificaExpresssao();
+
+        m = GameObject.Find("mensagem").GetComponent<Mensagem>();
     }
 
-
+    //MaxDistanceDelta is the third argument of MoveTowards function, that moves the location point
     void IdentificaExpresssao() {
 
         tagExpressao = e.tag; 
@@ -53,7 +59,7 @@ public class Ponto : MonoBehaviour {
             break; 
 
             case "expressao2":
-                maxDistanciaDelta = 1.115f;
+                maxDistanciaDelta = 1.199f;
             break; 
 
             case "expressao3": 
@@ -67,38 +73,46 @@ public class Ponto : MonoBehaviour {
         }
     }
 
-   
+   //Location point responsible for being the index of the string and identify the delimiter character
     public void MovePonto() {
 
-        ponto.transform.position = Vector3.MoveTowards(ponto.transform.position, fimExp.transform.position, maxDistanciaDelta);
+        try {
 
-        Debug.Log("v[" + i + "]  = " + expressao[i]); 
+            ponto.transform.position = Vector3.MoveTowards(ponto.transform.position, fimExp.transform.position, maxDistanciaDelta);
 
-        e.DelimitadorAbertura(expressao[i]);
-        e.DelimitadorFechamento(expressao[i]);
+            e.DelimitadorAbertura(expressao[i]);
+            e.DelimitadorFechamento(expressao[i]);
 
-        if(e.GetEncAbertura()) {
+            if(e.GetEncAbertura()) {
 
-            cj.abertura = e.GetDelimAbertura(); 
-            cj.GerarCaixa();
-        
-        } else {
+                cj.abertura = e.GetDelimAbertura(); 
+                cj.GerarCaixa();
+            
+            } else {
 
-            if(e.GetEncFechamento()) {
+                if(e.GetEncFechamento()) {
 
-                Debug.Log("Encontrou delimitador de fechamento.");
-                cj.fechamento = e.GetDelimFechamento(); 
+                    cj.fechamento = e.GetDelimFechamento(); 
+                }
             }
+
+            i++; 
+            Debug.Log("I em Ponto = " + i); 
+
+        } catch (System.IndexOutOfRangeException e) {
+
+            m.StringParaText("Essa expressão terminou, mas podemos verificar outra :)");
+            m.StartCoroutine(m.WaitAndPrint(5f));
+            m.StringParaText(" "); 
+            m.StartCoroutine(m.WaitAndPrint(0.5f));
+            //Debug.Log(e.Message);
+            // Set IndexOutOfRangeException to the new exception's InnerException.
+            throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
         }
-        
-        if(i % 2 == 0)
-            i += 2; 
-        else
-            i += 0;
     }
 
 
-
+    //Turns the Text UI expression in a string expression
     void ConverteExpressao() {
 
         e.ExpressaoString(texto);
