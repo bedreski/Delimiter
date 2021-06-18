@@ -93,16 +93,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.990566, g: 0.7018248, b: 0.4532307, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.99215686, g: 0.7019608, b: 0.45490196, a: 1}
+    m_NormalColor: {r: 0.5921569, g: 0.6392157, b: 0.73333335, a: 1}
+    m_HighlightedColor: {r: 0.6627451, g: 0.7254902, b: 0.8509804, a: 1}
+    m_PressedColor: {r: 0.77254903, g: 0.77254903, b: 0.77254903, a: 1}
+    m_SelectedColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -148,8 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ponto: {fileID: 0}
   fimExp: {fileID: 0}
+  i: 0
   texto: {fileID: 0}
   expressao: 
+  ie: {fileID: 0}
 --- !u!50 &3578182198059208848
 Rigidbody2D:
   serializedVersion: 4
