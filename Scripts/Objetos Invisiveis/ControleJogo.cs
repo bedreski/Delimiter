@@ -15,15 +15,18 @@ public class ControleJogo : MonoBehaviour {
     public Gerador gerador; 
     public string fechamento, abertura; 
     [HideInInspector]
-    public Caixa caixa; 
+    public Caixa caixa, topo; 
     public Caixa parenteses, chaves, colchetes; 
     public Expressao e; 
     public Mensagem m; 
+    public IrParaExpressoes ie; 
+    GameObject go; 
 
     void Start() {
 
         InstanciaScript();
         e = GameObject.Find("expressao").GetComponent<Expressao>();
+ 
     }
 
 
@@ -44,7 +47,8 @@ public class ControleJogo : MonoBehaviour {
         if(a == "[" && f == "]")  {
 
             m.StringParaText("Colchetes: ok");
-            StartCoroutine(m.WaitAndPrint(0.5f));
+            StartCoroutine(m.WaitAndPrint(0.5f)); 
+            DesempilhaCaixa(); 
             
         } else {
 
@@ -52,6 +56,7 @@ public class ControleJogo : MonoBehaviour {
 
                 m.StringParaText("Parenteses: ok");
                 StartCoroutine(m.WaitAndPrint(0.5f));
+                DesempilhaCaixa();
         
             } else {
 
@@ -59,18 +64,20 @@ public class ControleJogo : MonoBehaviour {
 
                     m.StringParaText("Chaves: ok");
                     StartCoroutine(m.WaitAndPrint(0.5f));
+                    DesempilhaCaixa();
                     
                 } else {
 
                     m.StringParaText("Expressão incorreta!");
                     StartCoroutine(m.WaitAndPrint(0.5f));
+                    ie.Habilitado();
                     
                 } 
             } 
         }
     }
 
-    //Improve 
+
     //Defines which box will be generated, according with the delimiter found
     public void DefineCaixa() {
 
@@ -106,27 +113,31 @@ public class ControleJogo : MonoBehaviour {
     }
 
 
-    //Revisar 
+    //Does a Pop operation in the characters stack
     public void DesempilhaDelimitador() {
 
         abertura = pilha.Pop();
-        Debug.Log("Caractere sendo desempilhado: " + abertura);
     }
 
-    //Revisar e desenvolver 
+
+    //Does a Pop operation in the box GameObject stack and destroy the respective GameObject
     public void DesempilhaCaixa() {
 
-        Debug.Log("Método DesempilhaCaixa sem funções");
+        topo = pilhaCaixas.Pop();  
+
+        Destroy(topo.gameObject, 1); 
+
+        //animation after destroy
     }
 
 
     void ImprimePilha() {
 
-        Debug.Log("Pilha de caracteres:");
+        Debug.Log("Pilha de caixas:");
 
-        foreach(string caractere in pilha) {
+        foreach(Caixa c in pilhaCaixas) {
 
-            Debug.Log(caractere);
+            Debug.Log("Id: " + c.GetInstanceID());
         }
     }
     

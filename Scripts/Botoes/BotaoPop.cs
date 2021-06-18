@@ -10,6 +10,7 @@ public class BotaoPop : MonoBehaviour {
     Ponto p; 
     Expressao e; 
     Mensagem m; 
+    GameObject caixa; 
 
     void Start() {
         
@@ -21,17 +22,20 @@ public class BotaoPop : MonoBehaviour {
 
     public void Retirar() {
 
-        if(cj.pilha == null && cj.pilhaCaixas == null) {
+
+        try {
+
+            cj.DesempilhaDelimitador();  
+            cj.VerificaExpressao(); 
+
+        } catch (System.InvalidOperationException e) {
 
             m.StringParaText("A pilha está vazia! Tente empilhar algo.");
             StartCoroutine(m.WaitAndPrint(0.5f));
 
-        } else {
-
-            cj.DesempilhaDelimitador(); 
-            //cj.DesempilhaCaixa(); 
-            cj.VerificaExpressao(); 
+            throw new System.InvalidOperationException("Stack is empty now", e);
         }
+        
     }
 
 

@@ -16,12 +16,13 @@ public class Ponto : MonoBehaviour {
     ControleJogo cj; 
     private Expressao e; 
     public int i; 
-    //public Text texto;
     public TMP_Text texto; 
     public string expressao;
     private string tagExpressao; 
     private float maxDistanciaDelta; 
     Mensagem m; 
+    public IrParaExpressoes ie; 
+    BotaoPush b;
 
 
     void Awake() {
@@ -45,6 +46,7 @@ public class Ponto : MonoBehaviour {
         IdentificaExpresssao();
 
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
+        b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
     }
 
     //MaxDistanceDelta is the third argument of MoveTowards function, that moves the location point
@@ -87,27 +89,27 @@ public class Ponto : MonoBehaviour {
 
                 cj.abertura = e.GetDelimAbertura(); 
                 cj.GerarCaixa();
+                m.StringParaText("Delimitador de abertura encontrado. Dê um PUSH!");
+                StartCoroutine(m.WaitAndPrint(0.5f));
             
             } else {
 
                 if(e.GetEncFechamento()) {
 
                     cj.fechamento = e.GetDelimFechamento(); 
+                    m.StringParaText("Delimitador de fechamento encontrado. Dê um POP!");
+                    StartCoroutine(m.WaitAndPrint(0.5f));
                 }
             }
 
             i++; 
-            Debug.Log("I em Ponto = " + i); 
+    
 
         } catch (System.IndexOutOfRangeException e) {
 
-            m.StringParaText("Essa expressão terminou, mas podemos verificar outra :)");
-            m.StartCoroutine(m.WaitAndPrint(5f));
-            m.StringParaText(" "); 
-            m.StartCoroutine(m.WaitAndPrint(0.5f));
-            //Debug.Log(e.Message);
-            // Set IndexOutOfRangeException to the new exception's InnerException.
+            ie.Habilitado(); 
             throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
+
         }
     }
 

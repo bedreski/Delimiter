@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class FluxoCenas : MonoBehaviour {
 
-
     public void IrParaExpressoes() {
 
         SceneManager.LoadScene("chooseExpression"); 
@@ -26,6 +25,7 @@ public class FluxoCenas : MonoBehaviour {
     public void BotaoExp2() {
 
         SceneManager.LoadScene("expression2");
+
     }
 
     public void BotaoExp3() {

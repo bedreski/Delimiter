@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Revisado 
 
@@ -10,6 +11,7 @@ public class BotaoPush : MonoBehaviour {
     Expressao e; 
     Mensagem m; 
     Ponto p; 
+    BotaoPush b; 
 
     void Start() {
 
@@ -17,6 +19,7 @@ public class BotaoPush : MonoBehaviour {
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
         p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
+        b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>(); 
     }
 
     public void CaixaNaPilha() {
@@ -26,11 +29,11 @@ public class BotaoPush : MonoBehaviour {
 
             Caixa.SoltarCaixa(); 
             Caixa.PousoDaCaixa(); 
-            cj.Empilha(); 
+            cj.Empilha();
 
         } else {
 
-            m.StringParaText("Que pena, apenas delimitadores podem ser empilhados. Avance na expressão!");
+            m.StringParaText("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!");
             StartCoroutine(m.WaitAndPrint(0.5f));
 
         } 
