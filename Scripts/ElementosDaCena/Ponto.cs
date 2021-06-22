@@ -23,6 +23,7 @@ public class Ponto : MonoBehaviour {
     Mensagem m; 
     public IrParaExpressoes ie; 
     BotaoPush b;
+    public static bool avançou; 
 
 
     void Awake() {
@@ -102,8 +103,8 @@ public class Ponto : MonoBehaviour {
                 }
             }
 
-            i++; 
-    
+            i++;  
+            avançou = true;
 
         } catch (System.IndexOutOfRangeException e) {
 
