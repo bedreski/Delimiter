@@ -12,8 +12,7 @@ public class Mensagem : MonoBehaviour {
     // suspend execution for waitTime seconds
     public IEnumerator WaitAndPrint(float tempo) {
 
-        yield return new WaitForSeconds(2.0f);
-        print("WaitAndPrint " + Time.time);
+        yield return new WaitForSeconds(tempo);
     }
 
     public void StringParaText(string t) {

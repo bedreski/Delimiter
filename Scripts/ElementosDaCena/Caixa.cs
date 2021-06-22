@@ -47,6 +47,14 @@ public class Caixa : MonoBehaviour {
 
         ignorarColisao = true; 
     }
+
+    public void UiDesempilhaCaixa() {
+
+        Vector2 newPosition = transform.position; 
+        newPosition.y += 2; 
+        transform.position = newPosition;
+        InstanciaRb();
+    }
     
 
     void OnCollisionEnter2D(Collision2D colisao) {

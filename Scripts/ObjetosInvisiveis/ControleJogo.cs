@@ -40,11 +40,17 @@ public class ControleJogo : MonoBehaviour {
         if(!delimitadoresCorrespondentes) {
 
             m.StringParaText("Expressão incorreta!");
-            StartCoroutine(m.WaitAndPrint(0.5f));
-            ie.Habilitado();
+            StartCoroutine(m.WaitAndPrint(1f));
+            StartCoroutine(TempoEspera());
 
         } 
     
+    }
+
+    IEnumerator TempoEspera() {
+
+        yield return new WaitForSecondsRealtime(2);
+        ie.Habilitado();
     }
 
 
@@ -57,7 +63,7 @@ public class ControleJogo : MonoBehaviour {
             m.StringParaText("Colchetes: ok");
             delimitadoresCorrespondentes = true; 
             StartCoroutine(m.WaitAndPrint(0.5f)); 
-            DesempilhaCaixa(); 
+            Destroy(topo.gameObject, 1.5f);
             
         } else {
 
@@ -66,7 +72,7 @@ public class ControleJogo : MonoBehaviour {
                 m.StringParaText("Parenteses: ok");
                 delimitadoresCorrespondentes = true; 
                 StartCoroutine(m.WaitAndPrint(0.5f));
-                DesempilhaCaixa();
+                Destroy(topo.gameObject, 1.5f);
         
             } else {
 
@@ -75,7 +81,7 @@ public class ControleJogo : MonoBehaviour {
                     m.StringParaText("Chaves: ok");
                     delimitadoresCorrespondentes = true; 
                     StartCoroutine(m.WaitAndPrint(0.5f));
-                    DesempilhaCaixa();
+                    Destroy(topo.gameObject, 1.5f);
                     
                 } else {
 
@@ -132,11 +138,7 @@ public class ControleJogo : MonoBehaviour {
     public void DesempilhaCaixa() {
 
         topo = pilhaCaixas.Pop();  
-
-        Destroy(topo.gameObject, 0.3f); 
-
-        //animation after destroy
-        
+        topo.UiDesempilhaCaixa(); 
     }
 
 

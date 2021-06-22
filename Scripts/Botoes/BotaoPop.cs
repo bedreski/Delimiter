@@ -9,8 +9,7 @@ public class BotaoPop : MonoBehaviour {
     ControleJogo cj; 
     Ponto p; 
     Expressao e; 
-    Mensagem m; 
-    GameObject caixa; 
+    Mensagem m;  
 
     void Start() {
         
@@ -31,9 +30,18 @@ public class BotaoPop : MonoBehaviour {
 
             try {
 
-                cj.DesempilhaDelimitador();  
-                cj.VerificaExpressao(); 
-                Ponto.avançou = false;
+                if(e.GetEncFechamento()) {
+
+                    cj.DesempilhaDelimitador();  
+                    cj.DesempilhaCaixa(); 
+                    cj.VerificaExpressao(); 
+                    Ponto.avançou = false;
+                    
+                } else {
+
+                    m.StringParaText("Apenas delimitadores de fechamento podem ser desempilhados!");
+                    StartCoroutine(m.WaitAndPrint(0.5f));
+                }
 
             } catch (System.InvalidOperationException e) {
 
