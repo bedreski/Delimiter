@@ -23,20 +23,25 @@ public class BotaoPop : MonoBehaviour {
     public void Retirar() {
 
 
-        try {
+        if(!Ponto.avançou) {
 
-            cj.DesempilhaDelimitador();  
-            cj.VerificaExpressao(); 
+            Debug.Log("Não é possível desempilhar o mesmo caractere duas vezes!"); 
 
-        } catch (System.InvalidOperationException e) {
+        } else {
 
-            m.StringParaText("A pilha está vazia! Tente empilhar algo.");
-            StartCoroutine(m.WaitAndPrint(0.5f));
+            try {
 
-            throw new System.InvalidOperationException("Stack is empty now", e);
+                cj.DesempilhaDelimitador();  
+                cj.VerificaExpressao(); 
+                Ponto.avançou = false;
+
+            } catch (System.InvalidOperationException e) {
+
+                m.StringParaText("A pilha está vazia! Tente empilhar algo.");
+                StartCoroutine(m.WaitAndPrint(0.5f));
+
+                throw new System.InvalidOperationException("Stack is empty now", e);
+            }
         }
-        
     }
-
-
 }

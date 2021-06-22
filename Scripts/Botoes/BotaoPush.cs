@@ -24,20 +24,28 @@ public class BotaoPush : MonoBehaviour {
 
     public void CaixaNaPilha() {
 
+        if(!Ponto.avançou) {
 
-        if(e.GetEncAbertura()) {
-
-            Caixa.SoltarCaixa(); 
-            Caixa.PousoDaCaixa(); 
-            cj.Empilha();
+            Debug.Log("Não é possível empilhar o mesmo caractere duas vezes!"); 
 
         } else {
 
-            m.StringParaText("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!");
-            StartCoroutine(m.WaitAndPrint(0.5f));
 
-        } 
+            if(e.GetEncAbertura()) {
+
+                Caixa.SoltarCaixa(); 
+                Caixa.PousoDaCaixa(); 
+                cj.Empilha();
+                cj.ImprimePilha(); 
+                Ponto.avançou = false; 
+
+            } else {
+
+                m.StringParaText("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!");
+                StartCoroutine(m.WaitAndPrint(0.5f));
+
+            } 
+        }
     }
-
 }
  
