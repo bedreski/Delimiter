@@ -27,7 +27,6 @@ public class ControleJogo : MonoBehaviour {
 
         InstanciaScript();
         e = GameObject.Find("expressao").GetComponent<Expressao>();
- 
     }
 
 
@@ -42,12 +41,10 @@ public class ControleJogo : MonoBehaviour {
             m.StringParaText("Expressão incorreta!");
             StartCoroutine(m.WaitAndPrint(1f));
             StartCoroutine(TempoEspera());
-
         } 
-    
     }
 
-    IEnumerator TempoEspera() {
+    public IEnumerator TempoEspera() {
 
         yield return new WaitForSecondsRealtime(2);
         ie.Habilitado();
@@ -139,6 +136,11 @@ public class ControleJogo : MonoBehaviour {
 
         topo = pilhaCaixas.Pop();  
         topo.UiDesempilhaCaixa(); 
+    }
+
+    public int QuantidadeElementosPilha() {
+
+        return pilha.Count; 
     }
 
 

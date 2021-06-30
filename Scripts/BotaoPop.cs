@@ -10,6 +10,7 @@ public class BotaoPop : MonoBehaviour {
     Ponto p; 
     Expressao e; 
     Mensagem m;  
+    public IrParaExpressoes ie;
 
     void Start() {
         

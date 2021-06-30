@@ -15,7 +15,7 @@ public class Ponto : MonoBehaviour {
     public static Ponto instancia; 
     ControleJogo cj; 
     private Expressao e; 
-    public int i; 
+    public static int i; 
     public TMP_Text texto; 
     public string expressao;
     private string tagExpressao; 
@@ -43,7 +43,6 @@ public class Ponto : MonoBehaviour {
 
         i = 0; 
 
-        Debug.Log("Tag da expressão: " + e.tag);
         IdentificaExpresssao();
 
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();

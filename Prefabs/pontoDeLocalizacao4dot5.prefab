@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5400510004342282465}
   - component: {fileID: 4462929040150548151}
-  - component: {fileID: -2125281440551808352}
+  - component: {fileID: -6085185943397775467}
   - component: {fileID: 2853081531201018811}
   m_Layer: 0
   m_Name: pontoDeLocalizacao4dot5
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2125281440551808352
+--- !u!114 &-6085185943397775467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,11 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11991276ab43780429366807c01bcd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ponto: {fileID: 0}
-  fimExp: {fileID: 0}
+  ponto: {fileID: 467431491605488846}
+  fimExp: {fileID: 5918024238461327778, guid: b3ae4f9a672169c4d8dc1f20bdcf3cb9, type: 3}
   i: 0
   texto: {fileID: 0}
   expressao: 
+  ie: {fileID: 0}
 --- !u!50 &2853081531201018811
 Rigidbody2D:
   serializedVersion: 4
