@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using System; 
 using TMPro; 
 
-//Revisado
 
 public class Expressao : MonoBehaviour {
 
@@ -21,7 +20,6 @@ public class Expressao : MonoBehaviour {
     void Start() {
 
         InstanciaExp(); 
-        tamanhoExpressao = expressao.Length;  
     }
 
     void Update() {
@@ -114,11 +112,4 @@ public class Expressao : MonoBehaviour {
 
         return fechamento; 
     }
-
-    public int GetTamanhoExpressao() {
-
-        return tamanhoExpressao; 
-    }
-
-
 }

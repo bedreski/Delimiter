@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Revisando
 
 public class BotaoPop : MonoBehaviour {
 
@@ -26,6 +25,8 @@ public class BotaoPop : MonoBehaviour {
         if(!Ponto.avançou) {
 
             Debug.Log("Não é possível desempilhar o mesmo caractere duas vezes!"); 
+            m.StringParaText("Não é possível desempilhar o mesmo caractere duas vezes!");
+            StartCoroutine(m.WaitAndPrint(1f));
 
         } else {
 
@@ -37,6 +38,20 @@ public class BotaoPop : MonoBehaviour {
                     cj.DesempilhaCaixa(); 
                     cj.VerificaExpressao(); 
                     Ponto.avançou = false;
+
+                    if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() != 0) {
+
+                        StartCoroutine(cj.TempoEspera());
+
+                    } else {
+
+                        if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() == 0) {
+
+                            m.StringParaText("Expressão correta!"); 
+                            StartCoroutine(m.WaitAndPrint(1f)); 
+                            StartCoroutine(TempoEspera());
+                        }
+                    }
                     
                 } else {
 
@@ -52,5 +67,11 @@ public class BotaoPop : MonoBehaviour {
                 throw new System.InvalidOperationException("Stack is empty now", e);
             }
         }
+    }
+
+    public IEnumerator TempoEspera() {
+
+        yield return new WaitForSecondsRealtime(2);
+        ie.Habilitado();
     }
 }

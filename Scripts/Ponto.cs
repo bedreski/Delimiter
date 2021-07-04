@@ -5,7 +5,6 @@ using UnityEngine;
 using System; 
 using TMPro; 
 
-//Revisado
 
 public class Ponto : MonoBehaviour {
 
@@ -43,14 +42,14 @@ public class Ponto : MonoBehaviour {
 
         i = 0; 
 
-        IdentificaExpresssao();
+        IdentificaExpressao();
 
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
         b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
     }
 
     //MaxDistanceDelta is the third argument of MoveTowards function, that moves the location point
-    void IdentificaExpresssao() {
+    void IdentificaExpressao() {
 
         tagExpressao = e.tag; 
 
@@ -60,8 +59,10 @@ public class Ponto : MonoBehaviour {
                 maxDistanciaDelta = 0.65f; 
             break; 
 
+            //For x position = -0.4
             case "expressao2":
-                maxDistanciaDelta = 1.199f;
+                maxDistanciaDelta = 1.2f;
+                Debug.Log("Max distance delta: " + maxDistanciaDelta); 
             break; 
 
             case "expressao3": 
@@ -109,7 +110,6 @@ public class Ponto : MonoBehaviour {
 
             ie.Habilitado(); 
             throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
-
         }
     }
 

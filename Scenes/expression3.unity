@@ -1647,6 +1647,11 @@ PrefabInstance:
       objectReference: {fileID: 430271292}
     - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
         type: 3}
+      propertyPath: texto
+      value: 
+      objectReference: {fileID: 137245402}
+    - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
+        type: 3}
       propertyPath: chaves
       value: 
       objectReference: {fileID: 4348598169079696569, guid: ec30b7bc8ed89b94d84e956c66dad69e,
@@ -2098,7 +2103,7 @@ PrefabInstance:
     - target: {fileID: 5918024238461327779, guid: b3ae4f9a672169c4d8dc1f20bdcf3cb9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.96
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5918024238461327779, guid: b3ae4f9a672169c4d8dc1f20bdcf3cb9,
         type: 3}

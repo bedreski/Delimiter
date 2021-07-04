@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Revisado 
 
 public class BotaoPush : MonoBehaviour {
 
@@ -11,7 +10,6 @@ public class BotaoPush : MonoBehaviour {
     Expressao e; 
     Mensagem m; 
     Ponto p; 
-    BotaoPush b; 
 
     void Start() {
 
@@ -19,7 +17,6 @@ public class BotaoPush : MonoBehaviour {
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
         p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
-        b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>(); 
     }
 
     public void CaixaNaPilha() {
@@ -27,6 +24,8 @@ public class BotaoPush : MonoBehaviour {
         if(!Ponto.avançou) {
 
             Debug.Log("Não é possível empilhar o mesmo caractere duas vezes!"); 
+            m.StringParaText("Não é possível empilhar o mesmo caractere duas vezes!");
+            StartCoroutine(m.WaitAndPrint(1f));
 
         } else {
 
@@ -36,8 +35,8 @@ public class BotaoPush : MonoBehaviour {
                 Caixa.SoltarCaixa(); 
                 Caixa.PousoDaCaixa(); 
                 cj.Empilha();
-                Ponto.avançou = false; 
-                StartCoroutine(TempoEspera()); 
+                //p.MovePonto();
+                Ponto.avançou = false;  
 
             } else {
 
@@ -51,7 +50,6 @@ public class BotaoPush : MonoBehaviour {
     public IEnumerator TempoEspera() {
 
         yield return new WaitForSecondsRealtime(1);
-        p.MovePonto(); 
     }
 }
  

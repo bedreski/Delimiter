@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Revisado
 
 public class FluxoCenas : MonoBehaviour {
 

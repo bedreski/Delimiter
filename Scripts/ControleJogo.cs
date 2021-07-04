@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using System;
+using TMPro;
 
-//Revisado 
 
 public class ControleJogo : MonoBehaviour {
 
@@ -18,15 +18,34 @@ public class ControleJogo : MonoBehaviour {
     public Caixa caixa, topo; 
     public Caixa parenteses, chaves, colchetes; 
     public Expressao e; 
+    public string expressao;
     public Mensagem m; 
     public IrParaExpressoes ie; 
     GameObject go; 
     bool delimitadoresCorrespondentes; 
+    BotaoPush bp; 
+    Ponto p; 
+    public TMP_Text texto;
+    public int tamanhoExpressao; 
+    
 
     void Start() {
 
         InstanciaScript();
         e = GameObject.Find("expressao").GetComponent<Expressao>();
+        bp = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
+        p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
+
+        ConverteExpressao();
+        expressao = e.expressao;
+        tamanhoExpressao = expressao.Length; 
+    }
+
+
+
+    void ConverteExpressao() {
+
+        e.ExpressaoString(texto);
     }
 
 

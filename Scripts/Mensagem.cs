@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class Mensagem : MonoBehaviour {
 
-    //Mudar pra TMP
+
     public Text txt; 
 
     // suspend execution for waitTime seconds

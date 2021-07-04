@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Revisado
 
 public class Caixa : MonoBehaviour {
 

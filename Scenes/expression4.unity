@@ -769,6 +769,11 @@ PrefabInstance:
       objectReference: {fileID: 2009905066}
     - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
         type: 3}
+      propertyPath: texto
+      value: 
+      objectReference: {fileID: 1145122552}
+    - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
+        type: 3}
       propertyPath: chaves
       value: 
       objectReference: {fileID: 4348598169079696569, guid: ec30b7bc8ed89b94d84e956c66dad69e,
