@@ -37,4 +37,9 @@ public class FluxoCenas : MonoBehaviour {
         SceneManager.LoadScene("expression4");
     }
 
+    public void MaisSobrePilha() {
+
+        SceneManager.LoadScene("moreAboutStack"); 
+    }
+
 }
