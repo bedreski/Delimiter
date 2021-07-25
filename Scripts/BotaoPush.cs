@@ -23,7 +23,6 @@ public class BotaoPush : MonoBehaviour {
 
         if(!Ponto.avançou) {
 
-            Debug.Log("Não é possível empilhar o mesmo caractere duas vezes!"); 
             m.StringParaText("Não é possível empilhar o mesmo caractere duas vezes!");
             StartCoroutine(m.WaitAndPrint(1f));
 

@@ -20,14 +20,13 @@ public class BotaoPop : MonoBehaviour {
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
     }
 
-    
+
 
     public void Retirar() {
 
 
         if(!Ponto.avançou) {
 
-            Debug.Log("Não é possível desempilhar o mesmo caractere duas vezes!"); 
             m.StringParaText("Não é possível desempilhar o mesmo caractere duas vezes!");
             StartCoroutine(m.WaitAndPrint(1f));
 

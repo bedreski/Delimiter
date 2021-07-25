@@ -63,7 +63,6 @@ public class Ponto : MonoBehaviour {
             //For x position = -0.4
             case "expressao2":
                 maxDistanciaDelta = 1.2f;
-                Debug.Log("Max distance delta: " + maxDistanciaDelta); 
             break; 
 
             case "expressao3": 
