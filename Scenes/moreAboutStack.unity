@@ -1510,8 +1510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125, y: -45}
-  m_SizeDelta: {x: 320, y: 310}
+  m_AnchoredPosition: {x: 135.63919, y: -45.818398}
+  m_SizeDelta: {x: 298.7217, y: 308.3632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030168393
 MonoBehaviour:
@@ -1533,9 +1533,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A pilha \xE9 uma estrutura que funciona segundo o padr\xE3o LIFO (Last
-    in, first out). \n\nA caracter\xEDstica de empilhamento de dados \xE9 o que faz
-    com que o \xFAltimo dado colocado na pilha seja o primeiro a sair dela. "
+  m_text: "A pilha \xE9 uma estrutura de dados que funciona segundo o padr\xE3o LIFO
+    (Last In, First Out). \n\nA caracter\xEDstica de empilhamento de dados \xE9 o
+    que faz com que o \xFAltimo dado colocado na pilha seja o primeiro a sair dela. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1780,8 +1780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -99.79059, y: -55}
-  m_SizeDelta: {x: 410.4151, y: 352.2855}
+  m_AnchoredPosition: {x: -92.425026, y: -54.181602}
+  m_SizeDelta: {x: 425.1462, y: 353.9223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063931638
 MonoBehaviour:
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A estrutura Pilha
+  m_text: A Pilha
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
