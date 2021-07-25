@@ -938,7 +938,7 @@ PrefabInstance:
     - target: {fileID: 2786160289742173252, guid: 5f2424cabefbf9a4eb36c4cda9a703de,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2786160289742173252, guid: 5f2424cabefbf9a4eb36c4cda9a703de,
         type: 3}
@@ -1077,7 +1077,7 @@ PrefabInstance:
         type: 3}
       propertyPath: texto
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2134345609}
     - target: {fileID: -2125281440551808352, guid: c72ab878e4e9c4a4badbcf177e33232f,
         type: 3}
       propertyPath: ie
