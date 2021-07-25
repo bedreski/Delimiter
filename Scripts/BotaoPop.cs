@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class BotaoPop : MonoBehaviour {
 
+    public IrParaExpressoes ie;
     ControleJogo cj; 
-    Ponto p; 
     Expressao e; 
     Mensagem m;  
-    public IrParaExpressoes ie;
+    Ponto p; 
+
 
     void Start() {
         
@@ -18,6 +19,8 @@ public class BotaoPop : MonoBehaviour {
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
     }
+
+    
 
     public void Retirar() {
 

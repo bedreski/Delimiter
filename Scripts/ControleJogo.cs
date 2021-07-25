@@ -10,23 +10,23 @@ using TMPro;
 public class ControleJogo : MonoBehaviour {
 
     public static ControleJogo instancia;
+    public IrParaExpressoes ie;
     public Stack <string> pilha = new Stack<string>(); 
     public Stack <Caixa> pilhaCaixas = new Stack<Caixa>();  
     public Gerador gerador; 
-    public string fechamento, abertura; 
+    public Expressao e; 
+    public Mensagem m; 
     [HideInInspector]
     public Caixa caixa, topo; 
     public Caixa parenteses, chaves, colchetes; 
-    public Expressao e; 
-    public string expressao;
-    public Mensagem m; 
-    public IrParaExpressoes ie; 
-    GameObject go; 
-    bool delimitadoresCorrespondentes; 
-    BotaoPush bp; 
-    Ponto p; 
+    BotaoPush bp;
+    Ponto p;
     public TMP_Text texto;
-    public int tamanhoExpressao; 
+    public string fechamento, abertura;
+    public string expressao; 
+    public int tamanhoExpressao;  
+    GameObject go; 
+    bool delimitadoresCorrespondentes;   
     
 
     void Start() {

@@ -8,21 +8,22 @@ using TMPro;
 
 public class Ponto : MonoBehaviour {
 
+    public IrParaExpressoes ie;
+    public static Ponto instancia;  
+    private Rigidbody2D rigidB; 
+    public static bool avançou; 
     public GameObject ponto; 
     public GameObject fimExp; 
-    private Rigidbody2D rigidB; 
-    public static Ponto instancia; 
-    ControleJogo cj; 
     private Expressao e; 
     public static int i; 
     public TMP_Text texto; 
-    public string expressao;
+    public TMP_Text texto; 
     private string tagExpressao; 
+    public string expressao;
     private float maxDistanciaDelta; 
+    ControleJogo cj; 
     Mensagem m; 
-    public IrParaExpressoes ie; 
     BotaoPush b;
-    public static bool avançou; 
 
 
     void Awake() {

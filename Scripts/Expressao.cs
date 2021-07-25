@@ -10,9 +10,9 @@ using TMPro;
 public class Expressao : MonoBehaviour {
 
     public static Expressao i;
-    public string expressao; 
     private string abertura; 
     private string fechamento; 
+    public string expressao; 
     private bool encontrouAbertura; 
     private bool encontrouFechamento; 
     private int tamanhoExpressao; 
@@ -22,9 +22,7 @@ public class Expressao : MonoBehaviour {
         InstanciaExp(); 
     }
 
-    void Update() {
-
-    }
+    
 
     public void ExpressaoString(TMP_Text e) {
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IrParaExpressoes : MonoBehaviour {
 
-    public Transform quadro; 
     public CanvasGroup background; 
+    public Transform quadro; 
 
     public void Habilitado() {
 
