@@ -17,7 +17,6 @@ public class Ponto : MonoBehaviour {
     private Expressao e; 
     public static int i; 
     public TMP_Text texto; 
-    public TMP_Text texto; 
     private string tagExpressao; 
     public string expressao;
     private float maxDistanciaDelta; 

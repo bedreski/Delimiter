@@ -20,7 +20,7 @@ public class Gerador : MonoBehaviour {
     //Chooses which box GameObject will be generated
     public void GerandoCaixa() {
 
-        GameObject caixaObj; 
+        GameObject caixaObj = null; 
         
         switch(escolhaCaixa) {
 
