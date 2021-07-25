@@ -35,6 +35,8 @@ public class BotaoPush : MonoBehaviour {
                 Caixa.PousoDaCaixa(); 
                 cj.Empilha();
                 //It would be p.MovePonto()
+                m.StringParaText("Isso aí, podemos avançar!");
+                StartCoroutine(m.WaitAndPrint(1f));
                 Ponto.avançou = false;  
 
             } else {

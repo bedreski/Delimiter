@@ -39,6 +39,8 @@ public class BotaoPop : MonoBehaviour {
                     cj.DesempilhaDelimitador();  
                     cj.DesempilhaCaixa(); 
                     cj.VerificaExpressao(); 
+                    m.StringParaText("Isso aí, podemos avançar!");
+                    StartCoroutine(m.WaitAndPrint(1f));
                     Ponto.avançou = false;
 
                     if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() != 0) {
