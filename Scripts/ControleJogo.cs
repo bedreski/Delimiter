@@ -50,7 +50,6 @@ public class ControleJogo : MonoBehaviour {
 
 
 
-    //Revisado -- adicionar os outros tratamentos
     public void VerificaExpressao() { 
 
         ComparaDelimitadores(abertura, fechamento);
@@ -163,15 +162,6 @@ public class ControleJogo : MonoBehaviour {
     }
 
 
-    public void ImprimePilha() {
-
-        Debug.Log("Pilha de caixas:");
-
-        foreach(string c in pilha) {
-
-            Debug.Log(c);
-        }
-    }
     
     //Defines the box and generate the new box with the found delimiter
     void NovaCaixa() {

@@ -35,10 +35,6 @@ public class Gerador : MonoBehaviour {
             case 3:
                 caixaObj = Instantiate(colchetes);
             break; 
-
-            default:
-                caixaObj = Instantiate(caixa); 
-            break; 
         } 
 
         Vector3 objeto = transform.position; 

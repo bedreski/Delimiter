@@ -34,7 +34,6 @@ public class BotaoPush : MonoBehaviour {
                 Caixa.SoltarCaixa(); 
                 Caixa.PousoDaCaixa(); 
                 cj.Empilha();
-                //p.MovePonto();
                 Ponto.avançou = false;  
 
             } else {
