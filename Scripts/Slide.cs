@@ -7,12 +7,7 @@ public class Slide : MonoBehaviour {
 
     public GameObject[] slides; 
     public static int i = 0; 
-
-    void Awake() {
-
-        slides[0].SetActive(true); 
-
-    }
+    
 
     public void TrocarSlide() {
 
