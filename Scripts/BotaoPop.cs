@@ -14,10 +14,10 @@ public class BotaoPop : MonoBehaviour {
 
     void Start() {
         
+        m = GameObject.Find("mensagem").GetComponent<Mensagem>();
+        e = GameObject.Find("expressao").GetComponent<Expressao>();
         cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>();
         p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
-        e = GameObject.Find("expressao").GetComponent<Expressao>();
-        m = GameObject.Find("mensagem").GetComponent<Mensagem>();
     }
 
 

@@ -33,19 +33,16 @@ public class Ponto : MonoBehaviour {
     void Start() {
 
         InstanciaPonto();
-
-        e = GameObject.Find("expressao").GetComponent<Expressao>();
         ConverteExpressao();
-        expressao = e.expressao;
-
-        cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
-
-        i = 0; 
-
         IdentificaExpressao();
 
+        i = 0; 
+        expressao = e.expressao;
+
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
+        e = GameObject.Find("expressao").GetComponent<Expressao>();
         b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
+        cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
     }
 
     //MaxDistanceDelta is the third argument of MoveTowards function, that moves the location point
