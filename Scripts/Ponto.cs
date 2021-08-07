@@ -32,10 +32,10 @@ public class Ponto : MonoBehaviour {
 
     void Start() {
 
+        cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
-        cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
 
         i = 0; 
         expressao = e.expressao;

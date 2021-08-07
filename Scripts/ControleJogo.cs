@@ -38,8 +38,8 @@ public class ControleJogo : MonoBehaviour {
         expressao = e.expressao;
         tamanhoExpressao = expressao.Length; 
 
-        InstanciaScript();
         ConverteExpressao();
+        InstanciaScript();
 
     }
 
