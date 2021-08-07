@@ -427,7 +427,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ie
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 151494867}
     - target: {fileID: 3578182198059208860, guid: 512f049730b87054580761e7a65328e0,
         type: 3}
       propertyPath: ponto
@@ -1584,6 +1584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
         type: 3}
+      propertyPath: e
+      value: 
+      objectReference: {fileID: 383996230}
+    - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
+        type: 3}
       propertyPath: m
       value: 
       objectReference: {fileID: 1312704227}
@@ -1734,7 +1739,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ie
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 151494867}
     - target: {fileID: 4486966746690849706, guid: 8839eded88a822640aca2db9b82a4f18,
         type: 3}
       propertyPath: m_Name

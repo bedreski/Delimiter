@@ -31,15 +31,15 @@ public class ControleJogo : MonoBehaviour {
 
     void Start() {
 
-        InstanciaScript();
-        ConverteExpressao();
+        e = GameObject.Find("expressao").GetComponent<Expressao>();
+        bp = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
+        p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
 
         expressao = e.expressao;
         tamanhoExpressao = expressao.Length; 
 
-        e = GameObject.Find("expressao").GetComponent<Expressao>();
-        bp = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
-        p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
+        InstanciaScript();
+        ConverteExpressao();
 
     }
 
