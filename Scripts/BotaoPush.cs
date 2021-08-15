@@ -18,31 +18,38 @@ public class BotaoPush : MonoBehaviour {
         cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>();
         p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
     }
-
+ 
     public void CaixaNaPilha() {
 
-        if(!Ponto.avançou) {
+        if(!Ponto.avançou && Ponto.i == 0) {
 
-            m.StringParaText("Não é possível empilhar o mesmo caractere duas vezes!");
+            m.StringParaText("Estamos no início ainda? Então precisamos avançar!");
             StartCoroutine(m.WaitAndPrint(1f));
 
         } else {
 
+            if(!Ponto.avançou) {
 
-            if(e.GetEncAbertura()) {
-
-                Caixa.SoltarCaixa(); 
-                Caixa.PousoDaCaixa(); 
-                cj.Empilha();
-                //It would be p.MovePonto()
-                m.StringParaText("Isso aí, podemos avançar!");
-                StartCoroutine(m.WaitAndPrint(1f));
-                Ponto.avançou = false;  
+                m.StringParaText("Não é possível empilhar o mesmo caractere duas vezes!");
 
             } else {
+                
+                if(e.GetEncAbertura()) {
 
-                m.StringParaText("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!");
-                StartCoroutine(m.WaitAndPrint(0.5f));
+                    Caixa.SoltarCaixa(); 
+                    Caixa.PousoDaCaixa(); 
+                    cj.Empilha();
+                    //It would be p.MovePonto()
+                    m.StringParaText("Isso aí, podemos avançar!");
+                    StartCoroutine(m.WaitAndPrint(1f));
+                    Ponto.avançou = false;  
+
+                } else {
+
+                    m.StringParaText("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!");
+                    StartCoroutine(m.WaitAndPrint(0.5f));
+
+                }
 
             } 
         }
