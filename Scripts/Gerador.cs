@@ -9,8 +9,7 @@ public class Gerador : MonoBehaviour {
     public GameObject colchetes;
     public GameObject caixa; 
     ControleJogo cj; 
-    [HideInInspector]
-    public int escolhaCaixa; 
+
 
     void Start() {
 
@@ -18,7 +17,7 @@ public class Gerador : MonoBehaviour {
     }
 
     //Chooses which box GameObject will be generated
-    public void GerandoCaixa() {
+    public void GerandoCaixa(int escolhaCaixa) {
 
         GameObject caixaObj = null; 
         

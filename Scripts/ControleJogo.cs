@@ -115,26 +115,33 @@ public class ControleJogo : MonoBehaviour {
 
         if(abertura == "(") {
 
-            gerador.escolhaCaixa = 1; 
+            gerador.GerandoCaixa(1); 
             caixa = parenteses; 
 
         } else {
 
             if(abertura == "{") {
 
-                gerador.escolhaCaixa = 2;
+                gerador.GerandoCaixa(2);
                 caixa = chaves; 
 
             } else {
 
                 if(abertura == "[") {
 
-                    gerador.escolhaCaixa = 3;
+                    gerador.GerandoCaixa(3);
                     caixa = colchetes; 
                 }
             }
         }
     }
+
+    //Defines the box and generate the new box with the found delimiter
+    public void GerarCaixa() {
+
+        Invoke("DefineCaixa", 0.7f); 
+    }
+
 
     //Places the delimiter and the box GameObject in its stacks
     public void Empilha() {
@@ -158,25 +165,13 @@ public class ControleJogo : MonoBehaviour {
         topo.UiDesempilhaCaixa(); 
     }
 
+
+    //Returns the number of elements on the stack
     public int QuantidadeElementosPilha() {
 
         return pilha.Count; 
     }
 
-
-    
-    //Defines the box and generate the new box with the found delimiter
-    void NovaCaixa() {
-
-        DefineCaixa();
-        gerador.GerandoCaixa(); 
-    }
-
-
-    public void GerarCaixa() {
-
-        Invoke("NovaCaixa", 0.7f); 
-    }
 
 
     void InstanciaScript() {
