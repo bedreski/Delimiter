@@ -15,7 +15,6 @@ public class Expressao : MonoBehaviour {
     public string expressao; 
     private bool encontrouAbertura; 
     private bool encontrouFechamento; 
-    private int tamanhoExpressao; 
 
     void Start() {
 
@@ -60,7 +59,7 @@ public class Expressao : MonoBehaviour {
             default:
                 abertura = null; 
                 encontrouAbertura = false;
-            break; 
+            break;
         }
     }
 
