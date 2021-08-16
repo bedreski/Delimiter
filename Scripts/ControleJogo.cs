@@ -35,10 +35,11 @@ public class ControleJogo : MonoBehaviour {
         bp = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
         p = GameObject.Find("pontoDeLocalizacao4dot5").GetComponent<Ponto>();
 
+        ConverteExpressao();
+
         expressao = e.expressao;
         tamanhoExpressao = expressao.Length; 
 
-        ConverteExpressao();
         InstanciaScript();
 
     }
@@ -58,8 +59,7 @@ public class ControleJogo : MonoBehaviour {
 
         if(!delimitadoresCorrespondentes) {
 
-            m.StringParaText("Expressão incorreta!");
-            StartCoroutine(m.WaitAndPrint(1f));
+            StartCoroutine(m.ExibirMensagem("Expressão incorreta!"));
             StartCoroutine(TempoEspera());
         } 
     }
@@ -77,27 +77,24 @@ public class ControleJogo : MonoBehaviour {
 
         if(a == "[" && f == "]")  {
 
-            m.StringParaText("Colchetes: ok");
+            StartCoroutine(m.ExibirMensagem("Colchetes: ok"));
             delimitadoresCorrespondentes = true; 
-            StartCoroutine(m.WaitAndPrint(0.5f)); 
             Destroy(topo.gameObject, 1.5f);
             
         } else {
 
             if(a == "(" && f == ")") {
 
-                m.StringParaText("Parenteses: ok");
+                StartCoroutine(m.ExibirMensagem("Parenteses: ok"));
                 delimitadoresCorrespondentes = true; 
-                StartCoroutine(m.WaitAndPrint(0.5f));
                 Destroy(topo.gameObject, 1.5f);
         
             } else {
 
                 if(a == "{" && f == "}") {
 
-                    m.StringParaText("Chaves: ok");
+                    StartCoroutine(m.ExibirMensagem("Chaves: ok"));
                     delimitadoresCorrespondentes = true; 
-                    StartCoroutine(m.WaitAndPrint(0.5f));
                     Destroy(topo.gameObject, 1.5f);
                     
                 } else {

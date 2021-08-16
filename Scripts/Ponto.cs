@@ -37,13 +37,15 @@ public class Ponto : MonoBehaviour {
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
 
+        ConverteExpressao();
+
         i = 0; 
         expressao = e.expressao;
 
         InstanciaPonto();
-        ConverteExpressao();
         IdentificaExpressao();
 
+        Debug.Log(i); 
     }
 
     //MaxDistanceDelta is the third argument of MoveTowards function, that moves the location point
@@ -87,16 +89,14 @@ public class Ponto : MonoBehaviour {
 
                 cj.abertura = e.GetDelimAbertura(); 
                 cj.GerarCaixa();
-                m.StringParaText("Delimitador de abertura encontrado. Dê um PUSH!");
-                StartCoroutine(m.WaitAndPrint(0.5f));
+                StartCoroutine(m.ExibirMensagem("Delimitador de abertura encontrado. Dê um PUSH!"));
             
             } else {
 
                 if(e.GetEncFechamento()) {
 
                     cj.fechamento = e.GetDelimFechamento(); 
-                    m.StringParaText("Delimitador de fechamento encontrado. Dê um POP!");
-                    StartCoroutine(m.WaitAndPrint(0.5f));
+                    StartCoroutine(m.ExibirMensagem("Delimitador de fechamento encontrado. Dê um POP!"));
                 }
             }
 
