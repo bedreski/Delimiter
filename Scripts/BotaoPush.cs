@@ -23,14 +23,13 @@ public class BotaoPush : MonoBehaviour {
 
         if(!Ponto.avançou && Ponto.i == 0) {
 
-            m.StringParaText("Estamos no início ainda? Então precisamos avançar!");
-            StartCoroutine(m.WaitAndPrint(1f));
+            StartCoroutine(m.ExibirMensagem("Estamos no início ainda? Então precisamos avançar!")); 
 
         } else {
 
             if(!Ponto.avançou) {
 
-                m.StringParaText("Não é possível empilhar o mesmo caractere duas vezes!");
+                StartCoroutine(m.ExibirMensagem("Não é possível empilhar o mesmo caractere duas vezes!"));
 
             } else {
                 
@@ -40,14 +39,12 @@ public class BotaoPush : MonoBehaviour {
                     Caixa.PousoDaCaixa(); 
                     cj.Empilha();
                     //It would be p.MovePonto()
-                    m.StringParaText("Isso aí, podemos avançar!");
-                    StartCoroutine(m.WaitAndPrint(1f));
+                    StartCoroutine(m.ExibirMensagem("Isso aí, podemos avançar!"));
                     Ponto.avançou = false;  
 
                 } else {
 
-                    m.StringParaText("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!");
-                    StartCoroutine(m.WaitAndPrint(0.5f));
+                    StartCoroutine(m.ExibirMensagem("Apenas delimitadores de abertura podem ser empilhados. Avance na expressão!"));
 
                 }
 
