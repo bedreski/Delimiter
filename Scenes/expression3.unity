@@ -929,6 +929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mensagem
       objectReference: {fileID: 0}
+    - target: {fileID: 6815643557182402764, guid: 706cd28bf0c463e42b1ed133425cb96f,
+        type: 3}
+      propertyPath: texto
+      value: 
+      objectReference: {fileID: 554678119}
     - target: {fileID: 6815643557182402767, guid: 706cd28bf0c463e42b1ed133425cb96f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1054,6 +1059,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 554678116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &554678119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6815643557182402753, guid: 706cd28bf0c463e42b1ed133425cb96f,
+    type: 3}
+  m_PrefabInstance: {fileID: 554678116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &645946423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,7 +1087,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ie
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 430271292}
     - target: {fileID: 3578182198059208860, guid: 512f049730b87054580761e7a65328e0,
         type: 3}
       propertyPath: ponto
@@ -1630,6 +1647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
         type: 3}
+      propertyPath: e
+      value: 
+      objectReference: {fileID: 137245405}
+    - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
+        type: 3}
       propertyPath: m
       value: 
       objectReference: {fileID: 554678117}
@@ -2144,7 +2166,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ie
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 430271292}
     - target: {fileID: 4486966746690849706, guid: 8839eded88a822640aca2db9b82a4f18,
         type: 3}
       propertyPath: m_Name

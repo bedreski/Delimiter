@@ -601,7 +601,7 @@ PrefabInstance:
         type: 3}
       propertyPath: e
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1145122555}
     - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
         type: 3}
       propertyPath: m
@@ -611,7 +611,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ie
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1802861044}
     - target: {fileID: 980971406178478645, guid: c3b6e972e230e084594e660b56c73cd8,
         type: 3}
       propertyPath: texto
@@ -981,7 +981,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ie
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1802861044}
     - target: {fileID: 3578182198059208860, guid: 512f049730b87054580761e7a65328e0,
         type: 3}
       propertyPath: ponto
@@ -1778,6 +1778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mensagem
       objectReference: {fileID: 0}
+    - target: {fileID: 6815643557182402764, guid: 706cd28bf0c463e42b1ed133425cb96f,
+        type: 3}
+      propertyPath: texto
+      value: 
+      objectReference: {fileID: 1663671556}
     - target: {fileID: 6815643557182402767, guid: 706cd28bf0c463e42b1ed133425cb96f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1903,6 +1908,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1663671553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1663671556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6815643557182402753, guid: 706cd28bf0c463e42b1ed133425cb96f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1663671553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1802861044 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8473979768222000623, guid: 4378133a0ab679848a38583dfc9d9e13,

@@ -1395,6 +1395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mensagem
       objectReference: {fileID: 0}
+    - target: {fileID: 6815643557182402764, guid: 706cd28bf0c463e42b1ed133425cb96f,
+        type: 3}
+      propertyPath: texto
+      value: 
+      objectReference: {fileID: 1608141276}
     - target: {fileID: 6815643557182402767, guid: 706cd28bf0c463e42b1ed133425cb96f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1638,6 +1643,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1455228963}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1608141276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6815643557182402753, guid: 706cd28bf0c463e42b1ed133425cb96f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1312704226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1775720208
 GameObject:
   m_ObjectHideFlags: 0
