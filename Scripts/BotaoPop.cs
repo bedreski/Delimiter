@@ -25,51 +25,60 @@ public class BotaoPop : MonoBehaviour {
     public void Retirar() {
 
 
-        if(!Ponto.avançou) {
+        if(!Ponto.avançou && !e.GetEncFechamento()) {
 
-            m.StringParaText("Não é possível desempilhar o mesmo caractere duas vezes!");
+            m.StringParaText("Ainda não! Encontre um delimitador de fechamento para poder dar um POP!");
             StartCoroutine(m.WaitAndPrint(1f));
 
         } else {
 
-            try {
+            if(!Ponto.avançou) {
 
-                if(e.GetEncFechamento()) {
+                m.StringParaText("Não é possível desempilhar o mesmo caractere duas vezes!");
 
-                    cj.DesempilhaDelimitador();  
-                    cj.DesempilhaCaixa(); 
-                    cj.VerificaExpressao(); 
-                    m.StringParaText("Isso aí, podemos avançar!");
-                    StartCoroutine(m.WaitAndPrint(1f));
-                    Ponto.avançou = false;
+            } else {
 
-                    if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() != 0) {
+                try {
 
-                        StartCoroutine(cj.TempoEspera());
+                    if(e.GetEncFechamento()) {
 
+                        cj.DesempilhaDelimitador();  
+                        cj.DesempilhaCaixa(); 
+                        cj.VerificaExpressao(); 
+                        m.StringParaText("Isso aí, podemos avançar!");
+                        StartCoroutine(m.WaitAndPrint(1f));
+                        Ponto.avançou = false;
+
+                        if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() != 0) {
+
+                            StartCoroutine(cj.TempoEspera());
+
+                        } else {
+
+                            if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() == 0) {
+
+                                m.StringParaText("Expressão correta!"); 
+                                StartCoroutine(m.WaitAndPrint(1f)); 
+                                StartCoroutine(TempoEspera());
+                            }
+                        }
+                        
                     } else {
 
-                        if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() == 0) {
-
-                            m.StringParaText("Expressão correta!"); 
-                            StartCoroutine(m.WaitAndPrint(1f)); 
-                            StartCoroutine(TempoEspera());
-                        }
+                        m.StringParaText("Apenas delimitadores de fechamento podem ser desempilhados!");
+                        StartCoroutine(m.WaitAndPrint(0.5f));
                     }
-                    
-                } else {
 
-                    m.StringParaText("Apenas delimitadores de fechamento podem ser desempilhados!");
+                } catch (System.InvalidOperationException e) {
+
+                    m.StringParaText("A pilha está vazia! Tente empilhar algo.");
                     StartCoroutine(m.WaitAndPrint(0.5f));
+
+                    throw new System.InvalidOperationException("Stack is empty now", e);
                 }
 
-            } catch (System.InvalidOperationException e) {
-
-                m.StringParaText("A pilha está vazia! Tente empilhar algo.");
-                StartCoroutine(m.WaitAndPrint(0.5f));
-
-                throw new System.InvalidOperationException("Stack is empty now", e);
             }
+
         }
     }
 
