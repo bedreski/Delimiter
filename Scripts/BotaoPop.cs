@@ -27,14 +27,13 @@ public class BotaoPop : MonoBehaviour {
 
         if(!Ponto.avançou && !e.GetEncFechamento()) {
 
-            m.StringParaText("Ainda não! Encontre um delimitador de fechamento para poder dar um POP!");
-            StartCoroutine(m.WaitAndPrint(1f));
+            StartCoroutine(m.ExibirMensagem("Ainda não! Encontre um delimitador de fechamento para poder dar um POP!"));
 
         } else {
 
             if(!Ponto.avançou) {
 
-                m.StringParaText("Não é possível desempilhar o mesmo caractere duas vezes!");
+                StartCoroutine(m.ExibirMensagem("Não é possível desempilhar o mesmo caractere duas vezes!"));
 
             } else {
 
@@ -45,34 +44,31 @@ public class BotaoPop : MonoBehaviour {
                         cj.DesempilhaDelimitador();  
                         cj.DesempilhaCaixa(); 
                         cj.VerificaExpressao(); 
-                        m.StringParaText("Isso aí, podemos avançar!");
-                        StartCoroutine(m.WaitAndPrint(1f));
+                        StartCoroutine(m.ExibirMensagem("Isso aí, podemos avançar!"));
                         Ponto.avançou = false;
 
                         if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() != 0) {
 
                             StartCoroutine(cj.TempoEspera());
+                            StartCoroutine(m.ExibirMensagem("Expressão incorreta!")); 
 
                         } else {
 
                             if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() == 0) {
 
-                                m.StringParaText("Expressão correta!"); 
-                                StartCoroutine(m.WaitAndPrint(1f)); 
+                                StartCoroutine(m.ExibirMensagem("Expressão correta!")); 
                                 StartCoroutine(TempoEspera());
                             }
                         }
                         
                     } else {
 
-                        m.StringParaText("Apenas delimitadores de fechamento podem ser desempilhados!");
-                        StartCoroutine(m.WaitAndPrint(0.5f));
+                        StartCoroutine(m.ExibirMensagem("Apenas delimitadores de fechamento podem ser desempilhados!"));
                     }
 
                 } catch (System.InvalidOperationException e) {
 
-                    m.StringParaText("A pilha está vazia! Tente empilhar algo.");
-                    StartCoroutine(m.WaitAndPrint(0.5f));
+                    StartCoroutine(m.ExibirMensagem("A pilha está vazia! Tente empilhar algo."));
 
                     throw new System.InvalidOperationException("Stack is empty now", e);
                 }
