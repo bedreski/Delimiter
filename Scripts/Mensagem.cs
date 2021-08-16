@@ -7,17 +7,19 @@ using UnityEngine.UIElements;
 public class Mensagem : MonoBehaviour {
 
 
-    public Text txt; 
+    public Text texto; 
 
     // suspend execution for waitTime seconds
-    public IEnumerator WaitAndPrint(float tempo) {
+    public IEnumerator ExibirMensagem(string t) {
 
-        yield return new WaitForSeconds(tempo);
+        texto.text = t;
+        yield return new WaitForSeconds(3);
+        texto.text = " "; 
     }
 
     public void StringParaText(string t) {
 
-        txt.text = t; 
+        texto.text = t; 
     }
    
 }
