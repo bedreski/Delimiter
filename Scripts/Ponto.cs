@@ -44,8 +44,6 @@ public class Ponto : MonoBehaviour {
 
         InstanciaPonto();
         IdentificaExpressao();
-
-        Debug.Log(i); 
     }
 
     //MaxDistanceDelta is the third argument of MoveTowards function, that moves the location point
@@ -59,7 +57,6 @@ public class Ponto : MonoBehaviour {
                 maxDistanciaDelta = 0.65f; 
             break; 
 
-            //For x position = -0.4
             case "expressao2":
                 maxDistanciaDelta = 1.2f;
             break; 
