@@ -10,13 +10,13 @@ public class EfeitoSonoro : MonoBehaviour {
 
     void Start() {
 
-        audioSource = GetComponent<AudioSource>(); 
+        audioSource = GetComponent<AudioSource>();  
     }
 
 
     public void BotaoPlayUI() {
 
-        audioSource.PlayOneShot(sound); 
+        audioSource.PlayOneShot(sound, 1f); 
     }
     
 }
