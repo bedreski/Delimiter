@@ -13,7 +13,7 @@ public class Mensagem : MonoBehaviour {
     public IEnumerator ExibirMensagem(string t) {
 
         texto.text = t;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         texto.text = " "; 
     }
 
