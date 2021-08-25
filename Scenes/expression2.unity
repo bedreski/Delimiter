@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 6141452325330925548, guid: 0e466722c64cfe64ab4796e1df348645,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: BotaoPlayUI
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 6141452325330925548, guid: 0e466722c64cfe64ab4796e1df348645,
         type: 3}
@@ -932,6 +932,11 @@ PrefabInstance:
       value: "Essa express\xE3o est\xE1 incorreta pois h\xE1 um delimitador de fechamento
         que n\xE3o possui abertura. \n"
       objectReference: {fileID: 0}
+    - target: {fileID: 2786160290482594662, guid: 5f2424cabefbf9a4eb36c4cda9a703de,
+        type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 1370304957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f2424cabefbf9a4eb36c4cda9a703de, type: 3}
 --- !u!1 &1335726535 stripped
@@ -1206,6 +1211,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da7e7ea0398fa8045a2137aad33174ef, type: 3}
+--- !u!1 &1370304957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5083048556596638785, guid: da7e7ea0398fa8045a2137aad33174ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1370304956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1433830035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5918024238461327778, guid: b3ae4f9a672169c4d8dc1f20bdcf3cb9,
@@ -2047,7 +2058,7 @@ PrefabInstance:
     - target: {fileID: 3578182198059208863, guid: 512f049730b87054580761e7a65328e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: BotaoPlayUI
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 3578182198059208863, guid: 512f049730b87054580761e7a65328e0,
         type: 3}

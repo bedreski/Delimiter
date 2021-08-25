@@ -1420,6 +1420,11 @@ PrefabInstance:
       value: "Essa express\xE3o est\xE1 incorreta pois h\xE1 um delimitador de fechamento
         que n\xE3o foi aberto. \n"
       objectReference: {fileID: 0}
+    - target: {fileID: 2786160290482594662, guid: 5f2424cabefbf9a4eb36c4cda9a703de,
+        type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 1901240088}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f2424cabefbf9a4eb36c4cda9a703de, type: 3}
 --- !u!1 &1181157839 stripped
@@ -2075,6 +2080,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da7e7ea0398fa8045a2137aad33174ef, type: 3}
+--- !u!1 &1901240088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5083048556596638785, guid: da7e7ea0398fa8045a2137aad33174ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1901240087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1963786735
 PrefabInstance:
   m_ObjectHideFlags: 0
