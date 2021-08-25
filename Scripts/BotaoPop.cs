@@ -6,6 +6,7 @@ using UnityEngine;
 public class BotaoPop : MonoBehaviour {
 
     public IrParaExpressoes ie;
+    public bool desempilhou = true; 
     ControleJogo cj; 
     Expressao e; 
     Mensagem m;  
@@ -46,6 +47,7 @@ public class BotaoPop : MonoBehaviour {
                         cj.VerificaExpressao(); 
                         StartCoroutine(m.ExibirMensagem("Isso aí, podemos avançar!"));
                         Ponto.avançou = false;
+                        desempilhou = true; 
 
                         if(Ponto.i == cj.tamanhoExpressao && cj.QuantidadeElementosPilha() != 0) {
 

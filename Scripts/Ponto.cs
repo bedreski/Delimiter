@@ -22,7 +22,8 @@ public class Ponto : MonoBehaviour {
     private float maxDistanciaDelta; 
     ControleJogo cj; 
     Mensagem m; 
-    BotaoPush b;
+    BotaoPush push;
+    BotaoPop pop; 
 
 
     void Awake() {
@@ -35,7 +36,8 @@ public class Ponto : MonoBehaviour {
         cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>(); 
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
         e = GameObject.Find("expressao").GetComponent<Expressao>();
-        b = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
+        push = GameObject.Find("BotaoPush").GetComponent<BotaoPush>();
+        pop = GameObject.Find("BotaoPop").GetComponent<BotaoPop>();
 
         ConverteExpressao();
 
@@ -75,35 +77,50 @@ public class Ponto : MonoBehaviour {
    //Location point responsible for being the index of the string and identify the delimiter character
     public void MovePonto() {
 
-        try {
+        if(!push.empilhou) {
 
-            ponto.transform.position = Vector3.MoveTowards(ponto.transform.position, fimExp.transform.position, maxDistanciaDelta);
+            StartCoroutine(m.ExibirMensagem("Parece que você esqueceu de dar um PUSH! Realize essa operação."));
 
-            e.DelimitadorAbertura(expressao[i]);
-            e.DelimitadorFechamento(expressao[i]);
+        } else {
 
-            if(e.GetEncAbertura()) {
+            if(!pop.desempilhou) {
 
-                cj.abertura = e.GetDelimAbertura(); 
-                cj.GerarCaixa();
-                StartCoroutine(m.ExibirMensagem("Delimitador de abertura encontrado. Dê um PUSH!"));
-            
+                StartCoroutine(m.ExibirMensagem("Parece que você esqueceu de dar um POP! Realize essa operação."));
             } else {
 
-                if(e.GetEncFechamento()) {
+                try {
 
-                    cj.fechamento = e.GetDelimFechamento(); 
-                    StartCoroutine(m.ExibirMensagem("Delimitador de fechamento encontrado. Dê um POP!"));
+                    ponto.transform.position = Vector3.MoveTowards(ponto.transform.position, fimExp.transform.position, maxDistanciaDelta);
+
+                    e.DelimitadorAbertura(expressao[i]);
+                    e.DelimitadorFechamento(expressao[i]);
+
+                    if(e.GetEncAbertura()) {
+
+                        cj.abertura = e.GetDelimAbertura(); 
+                        cj.GerarCaixa();
+                        StartCoroutine(m.ExibirMensagem("Delimitador de abertura encontrado. Dê um PUSH!"));
+                        push.empilhou = false; 
+                    
+                    } else {
+
+                        if(e.GetEncFechamento()) {
+
+                            cj.fechamento = e.GetDelimFechamento(); 
+                            StartCoroutine(m.ExibirMensagem("Delimitador de fechamento encontrado. Dê um POP!"));
+                            pop.desempilhou = false; 
+                        }
+                    }
+
+                    i++;  
+                    avançou = true;
+
+                } catch (System.IndexOutOfRangeException e) {
+
+                    ie.Habilitado(); 
+                    throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
                 }
             }
-
-            i++;  
-            avançou = true;
-
-        } catch (System.IndexOutOfRangeException e) {
-
-            ie.Habilitado(); 
-            throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
         }
     }
 

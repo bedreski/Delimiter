@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BotaoPush : MonoBehaviour {
  
+    public bool empilhou = true; 
     ControleJogo cj;  
     Expressao e; 
     Mensagem m; 
@@ -36,11 +37,10 @@ public class BotaoPush : MonoBehaviour {
                 if(e.GetEncAbertura()) {
 
                     Caixa.SoltarCaixa(); 
-                    //Caixa.PousoDaCaixa(); 
                     cj.Empilha();
-                    //It would be p.MovePonto()
                     StartCoroutine(m.ExibirMensagem("Isso aí, podemos avançar!"));
                     Ponto.avançou = false;  
+                    empilhou = true; 
 
                 } else {
 
