@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 
 public class BotaoPush : MonoBehaviour {
-
+ 
     ControleJogo cj;  
     Expressao e; 
     Mensagem m; 
     Ponto p; 
 
     void Start() {
-
+ 
         m = GameObject.Find("mensagem").GetComponent<Mensagem>();
         e = GameObject.Find("expressao").GetComponent<Expressao>();
         cj = GameObject.Find("ControleDoJogo").GetComponent<ControleJogo>();
@@ -36,7 +36,7 @@ public class BotaoPush : MonoBehaviour {
                 if(e.GetEncAbertura()) {
 
                     Caixa.SoltarCaixa(); 
-                    Caixa.PousoDaCaixa(); 
+                    //Caixa.PousoDaCaixa(); 
                     cj.Empilha();
                     //It would be p.MovePonto()
                     StartCoroutine(m.ExibirMensagem("Isso aí, podemos avançar!"));

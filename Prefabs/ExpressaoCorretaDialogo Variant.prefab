@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 4631664170591609122, guid: 07c118de9317bd9488edc03cc9f201ce,
         type: 3}
       propertyPath: m_Name
-      value: ExpressaoCorretaDialogo
+      value: ExpressaoCorretaDialogo Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4631664170591609122, guid: 07c118de9317bd9488edc03cc9f201ce,
         type: 3}
@@ -133,5 +133,10 @@ PrefabInstance:
       value: "Express\xE3o correta, todos os delimitadores abertos foram fechados
         corretamente!"
       objectReference: {fileID: 0}
+    - target: {fileID: 8472582685735693780, guid: 07c118de9317bd9488edc03cc9f201ce,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 12f37011aefdb604bb89de99e954dc31, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c118de9317bd9488edc03cc9f201ce, type: 3}

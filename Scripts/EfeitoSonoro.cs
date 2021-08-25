@@ -14,7 +14,7 @@ public class EfeitoSonoro : MonoBehaviour {
     }
 
 
-    public void BotaoPlayUI() {
+    public void Play() {
 
         audioSource.PlayOneShot(sound, 1f); 
     }

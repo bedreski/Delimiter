@@ -6,9 +6,10 @@ using UnityEngine;
 public class Caixa : MonoBehaviour {
 
     private static Rigidbody2D rbCaixa; 
-    private static bool ignorarColisao = false; 
-    public static Caixa referencia; 
-
+    public static bool ignorarColisao = false; 
+    public static Caixa referencia;
+    static AudioSource audioSource; 
+    public AudioClip sound;
 
     void Awake() {
 
@@ -20,6 +21,7 @@ public class Caixa : MonoBehaviour {
 
         InstanciaScript(); 
         ControleJogo.instancia.caixa = this; 
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -58,24 +60,18 @@ public class Caixa : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D colisao) {
 
-        if(ignorarColisao) {
-            return; 
-        }
 
         if(colisao.gameObject.tag == "Plataforma") {
 
-            Invoke("PousoDaCaixa", 2f); 
-            ignorarColisao = true; 
+            audioSource.PlayOneShot(sound, 1f);
             
-        } 
-        
-        if(colisao.gameObject.tag == "Caixa") {
+        } else {
 
-            Invoke("PousoDaCaixa", 2f); 
-            ignorarColisao = true;  
-            
+            if(colisao.gameObject.tag == "Caixa") {
+
+                audioSource.PlayOneShot(sound, 1f);
+            }
         }
-
     } 
 
 }
